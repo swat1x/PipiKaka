@@ -1,0 +1,4 @@
+name: Pipikaka
+version: '${version}'
+main: ru.swat1x.pipikaka.PipiKakaPlugin
+api-version: 1.19

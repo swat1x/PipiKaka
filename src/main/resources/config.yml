@@ -1,0 +1,11 @@
+ds-token: 123
+donate:
+  plus:
+    name: ""
+    command: ""
+messages-delay: 6000
+messages:
+  "1":
+    - ""
+    - ""
+    - ""
