@@ -1,10 +1,7 @@
 package ru.swat1x.pipikaka.command;
 
 import co.aikar.commands.BaseCommand;
-import co.aikar.commands.annotation.CommandAlias;
-import co.aikar.commands.annotation.CommandCompletion;
-import co.aikar.commands.annotation.CommandPermission;
-import co.aikar.commands.annotation.Subcommand;
+import co.aikar.commands.annotation.*;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -26,10 +23,10 @@ public class AdminCommands extends BaseCommand {
 
   @Subcommand("giveDonate")
   @CommandCompletion("@donates @players")
-  public void giveDonate(CommandSender sender, Donate donate, String playerName) {
-    String[] data = playerName.split(":");
-    sender.sendMessage("§eНачинаю процесс выдачи " + donate.getName() + "§e игроку §a" + playerName);
-    plugin.getDonateGiveManager().handle(donate, data[0], data.length > 1 ? data[1] : data[0]);
+  public void giveDonate(CommandSender sender, Donate donate, @Split(" ") String[] target) {
+    sender.sendMessage(String.join(" ", target));
+    sender.sendMessage("§eНачинаю процесс выдачи " + donate.getName() + "§e игроку §a" + target[0]);
+    plugin.getDonateGiveManager().handle(donate, target[0], target.length > 1 ? target[1] : target[0]);
   }
 
   @Subcommand("reloadDonate")

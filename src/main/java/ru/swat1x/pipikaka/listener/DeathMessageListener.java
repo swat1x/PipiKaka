@@ -24,7 +24,9 @@ public class DeathMessageListener implements Listener {
 
   @EventHandler
   public void onBreak(BlockBreakEvent event) {
-    if (event.getBlock().hasMetadata("death-sign")) {
+    var block = event.getBlock();
+    if (block.hasMetadata("death-sign")) {
+      block.removeMetadata("death-sign", plugin);
       event.setDropItems(false);
       var player = event.getPlayer();
       player.sendTitle("§cБу!", "Зачем надругался над надгробьем!?", 0, 40, 15);

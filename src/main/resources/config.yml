@@ -1,3 +1,13 @@
+art:
+  world: "world"
+  pos1:
+    x: -3312705
+    y: 111
+    z: -3373248
+  pos2:
+    x: -3312832
+    y: 111
+    z: -3373121
 ds-token: 123
 donate:
   plus:
